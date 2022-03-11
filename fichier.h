@@ -1,23 +1,19 @@
-#ifndef enigmetext_H_INCLUDED
-#define enigmetext_H_INCLUDED
+struct minimap
+{
+	SDL_Surface* mini_map;
+	SDL_Rect pos_minimap;
+	SDL_Surface* mini_hero;
+	SDL_Rect pos_minihero;
+	
+	
+};
+
+typedef struct minimap minimap; 
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-
-
-initminimap( minimap * m);
-MAJMinimap(perso p , minimap * m, SDL_Rect camera, int redimensionnement);
-afficherminimap (minimap m, SDL_Surface * screen);
-
-
-
-
-
-
-#endif
-abc
+void init_minimap(minimap* mp);
+void blit_minimap( minimap* mp,SDL_Surface *screen);
+void dep_mini_hero (SDL_Rect* pos_perso,minimap mp , SDL_Rect camera,int redimensionnement,int sens);
+void free_minimap(minimap* mp);
 
 
